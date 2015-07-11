@@ -1,7 +1,6 @@
 package org.ligi.snackengage.snacks;
 
 import android.net.Uri;
-import org.ligi.snackengage.BuildConfig;
 import org.ligi.snackengage.R;
 
 public class RateSnack extends AbstractOpenURLSnack {
@@ -18,7 +17,7 @@ public class RateSnack extends AbstractOpenURLSnack {
 
     @Override
     protected Uri getUri() {
-        return Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID);
+        return Uri.parse("market://details?id=" + snackContext.getAndroidContext().getPackageName());
     }
 
 }
