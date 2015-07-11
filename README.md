@@ -2,11 +2,28 @@
 
 Engage Users with a Snackbar from the design lib to e.g. rate or translate the app.
 
+### How
+
+add this as dependency from jcenter
+```groovy
+compile 'org.ligi:snackengage:0.1'
+```
+
 Just add this where you want ( e.g. in your onCreate )
 
 ```java
-SnackEngage.from(this).with(new DefaultRateSnack()).show();
+SnackEngage.from(this).withSnack(new DefaultRateSnack()).build().engageWhenAppropriate();
 ```
+
+### Hints
+
+If you use a FloatingActionButton inside a CoordinatorLayout from the design-lib - pass this one into SnackEngage builder like this:
+
+```java
+SnackEngage.from(fab)..;
+```
+
+So the movements between SnackBar and FAB are coordinated
 
 ### Why
 
@@ -14,7 +31,7 @@ This lib came to exist because I wanted something like discreet-app-rate - but u
 After thinking about it I wanted to make it more broad - not only for rating - also engaging users by pointing them to beta-testing and translation.
 
 
-### How
+### Details
 
 The DefaultRateSnack just configures a RateSnack with default conditions:
 
