@@ -1,0 +1,8 @@
+<resources>
+    <string name="rate_snack_msg">Like?</string>
+    <string name="rate_snack_action">Rate!-)</string>
+
+    <string name="betatest_snack_msg">Power-User?</string>
+    <string name="betatest_snack_action">Beta-Test!-)</string>
+
+</resources>
