@@ -6,7 +6,7 @@ Engage Users with a Snackbar from the design lib to e.g. rate or translate the a
 
 add this as dependency from jcenter
 ```groovy
-compile 'org.ligi:snackengage:0.1'
+compile 'org.ligi:snackengage:0.2'
 ```
 
 Just add this where you want ( e.g. in your onCreate )
