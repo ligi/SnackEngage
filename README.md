@@ -27,7 +27,7 @@ So the movements between SnackBar and FAB are coordinated
 
 ### Why
 
-This lib came to exist because I wanted something like discreet-app-rate - but using a SnackBar from the new material design support lib which was emerging at google-io 2015.
+This lib came to exist because I wanted something like [discreet-app-rate](https://github.com/PomepuyN/discreet-app-rate) - but using a SnackBar from the new material design support lib which was emerging at google-io 2015.
 After thinking about it I wanted to make it more broad - not only for rating - also engaging users by pointing them to beta-testing and translation.
 
 
@@ -62,3 +62,11 @@ public class AfterNumberOfOpportunities implements SnackCondition {
     }
 }
 ```
+
+### License 
+
+MIT
+
+### Build Status
+
+[![Build Status](https://snap-ci.com/ligi/SnackEngage/branch/master/build_image)](https://snap-ci.com/ligi/SnackEngage/branch/master)
