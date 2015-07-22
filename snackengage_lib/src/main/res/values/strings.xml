@@ -5,4 +5,10 @@
     <string name="betatest_snack_msg">Power-User?</string>
     <string name="betatest_snack_action">Beta-Test!-)</string>
 
+    <string name="translate_snack_msg">Linguist?</string>
+    <string name="translate_snack_action">Translate!-)</string>
+
+    <string name="url_snack_msg">Curious?</string>
+    <string name="url_snack_action">Visit Website!-)</string>
+
 </resources>

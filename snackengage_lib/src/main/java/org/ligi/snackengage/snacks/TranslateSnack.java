@@ -2,21 +2,21 @@ package org.ligi.snackengage.snacks;
 
 import org.ligi.snackengage.R;
 
-public class BetaTestSnack extends OpenURLSNack {
+public class TranslateSnack extends OpenURLSNack {
 
-    public BetaTestSnack(final String uriString) {
+
+    public TranslateSnack(final String uriString) {
         super(uriString);
     }
 
     @Override
     public int getText() {
-        return R.string.betatest_snack_msg;
+        return R.string.translate_snack_msg;
     }
 
     @Override
     public int getActionText() {
-        return R.string.betatest_snack_action;
+        return R.string.translate_snack_action;
     }
-
 
 }
