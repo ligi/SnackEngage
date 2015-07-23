@@ -6,13 +6,13 @@ import org.ligi.snackengage.R;
 public class RateSnack extends AbstractOpenURLSnack {
 
     @Override
-    public int getText() {
-        return R.string.rate_snack_msg;
+    public String getText() {
+        return getString(R.string.rate_snack_msg);
     }
 
     @Override
-    public int getActionText() {
-        return R.string.rate_snack_action;
+    public String getActionText() {
+        return getString(R.string.rate_snack_action);
     }
 
     @Override

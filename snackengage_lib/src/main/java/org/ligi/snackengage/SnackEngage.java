@@ -23,7 +23,6 @@ public class SnackEngage {
         snackContext.getStats().registerOpportunity();
         for (final Snack snack : snacks) {
             if (snack.opportunity(snackContext)) {
-                snackContext.getStats().registerSnackShow(snack);
                 return true;
             }
         }

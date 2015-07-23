@@ -39,6 +39,8 @@ public abstract class BaseSnack implements Snack {
             }
         }
 
+        snackContext.getStats().registerSnackShow(this);
+
         Snackbar.make(snackContext.getRootView(), getText(), duration).setAction(getActionText(), new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -51,11 +53,13 @@ public abstract class BaseSnack implements Snack {
 
     public abstract void engage();
 
-    @StringRes
-    public abstract int getText();
+    public abstract String getText();
 
-    @StringRes
-    public abstract int getActionText();
+    public abstract String getActionText();
+
+    protected String getString(@StringRes int res) {
+        return snackContext.getAndroidContext().getString(res);
+    }
 
     public Snack withDuration(@SnackDuration int duration) {
         this.duration = duration;
