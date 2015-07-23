@@ -15,7 +15,17 @@ Just add this where you want ( e.g. in your onCreate )
 SnackEngage.from(this).withSnack(new DefaultRateSnack()).build().engageWhenAppropriate();
 ```
 
-So the movements between SnackBar and FAB are coordinated
+This would then show this snack after some opportunities and never again when once clicked on Rate ( which bings you to play-store or fdroid - anything that accepts the generated market:// link )
+
+![rate screenshot](doc/screenshots/rate_small.png)
+
+#### Other snacks that are possible:
+![rate screenshot](doc/screenshots/betatest_small.png)
+
+
+![rate screenshot](doc/screenshots/translate_small.png)
+
+or create your own
 
 ### Why
 
@@ -57,11 +67,13 @@ public class AfterNumberOfOpportunities implements SnackCondition {
 
 ### Hints
 
-If you use a FloatingActionButton inside a CoordinatorLayout from the design-lib and they are not coordinated - pass the fab view into snackengage:
+If you use a FloatingActionButton inside a CoordinatorLayout from the design-lib and they are not coordinated - pass a view into snackengage from which the Snackbar can find the CoordinatorLayout - e.g. the fab:
 
 ```java
 SnackEngage.from(fab)..;
 ```
+
+So the movements between SnackBar and FAB are coordinated
 
 ### Build Status
 
