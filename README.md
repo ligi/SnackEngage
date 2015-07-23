@@ -25,13 +25,28 @@ This would then show this snack after some opportunities and never again when on
 
 ![rate screenshot](doc/screenshots/translate_small.png)
 
-or create your own
+or create your own snack - e.g. to make a survey. 
+
+combine them as you wish and add your own conditions:
+
+```java
+SnackEngage.from(view)
+           .withSnack(new TranslateSnack("http://transifex.com")
+                              .withConditions(new IsOneOfTheseLocales(Locale.CANADA),
+                                              new NeverAgainWhenClickedOnce(),
+                                              new AfterNumberOfOpportunities(10)))
+           .withSnack(new DefaultRateSnack())
+           .withSnack(new BetaTestSnack("https://plus.google.com/105597594975384338151/posts/A8sFHUAKYz3")
+                              .withConditions(new NeverAgainWhenClickedOnce(),
+                                              new AfterNumberOfOpportunities(42)))
+           .build()
+           .engageWhenAppropriate();
+```
 
 ### Why
 
 This lib came to exist because I wanted something like [discreet-app-rate](https://github.com/PomepuyN/discreet-app-rate) - but using a SnackBar from the new material design support lib which was emerging at google-io 2015.
 After thinking about it I wanted to make it more broad - not only for rating - also engaging users by pointing them to beta-testing and translation.
-
 
 ### Details
 
