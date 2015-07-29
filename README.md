@@ -20,10 +20,7 @@ This would then show this snack after some opportunities and never again when on
 ![rate screenshot](doc/screenshots/rate_small.png)
 
 #### Other snacks that are possible:
-![rate screenshot](doc/screenshots/betatest_small.png)
-
-
-![rate screenshot](doc/screenshots/translate_small.png)
+![rate screenshot](doc/screenshots/betatest_small.png) ![rate screenshot](doc/screenshots/translate_small.png)
 
 or create your own snack - e.g. to make a survey. 
 
