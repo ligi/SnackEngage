@@ -28,7 +28,7 @@ combine them as you wish and add your own conditions:
 
 ```java
 SnackEngage.from(view)
-           .withSnack(new TranslateSnack("http://transifex.com")
+           .withSnack(new TranslateSnack("https://www.transifex.com/projects/p/snackengage")
                               .withConditions(new IsOneOfTheseLocales(Locale.CANADA),
                                               new NeverAgainWhenClickedOnce(),
                                               new AfterNumberOfOpportunities(10)))
