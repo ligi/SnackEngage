@@ -23,9 +23,9 @@ public class DemoActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 SnackEngage.from(v)
-                           .withSnack(new TranslateSnack("http://transifex.com").withConditions(new IsOneOfTheseLocales(Locale.CANADA),
-                                                                                                new NeverAgainWhenClickedOnce(),
-                                                                                                new AfterNumberOfOpportunities(10)))
+                           .withSnack(new TranslateSnack("https://www.transifex.com/projects/p/snackengage").withConditions(new IsOneOfTheseLocales(Locale.CANADA),
+                                                                                                                            new NeverAgainWhenClickedOnce(),
+                                                                                                                            new AfterNumberOfOpportunities(10)))
                            .withSnack(new DefaultRateSnack())
                            .withSnack(new BetaTestSnack("https://plus.google.com/105597594975384338151/posts/A8sFHUAKYz3").withConditions(new NeverAgainWhenClickedOnce(),
                                                                                                                                           new AfterNumberOfOpportunities(
