@@ -8,8 +8,8 @@ import org.ligi.snackengage.SnackEngage;
 import org.ligi.snackengage.conditions.AfterNumberOfOpportunities;
 import org.ligi.snackengage.conditions.NeverAgainWhenClickedOnce;
 import org.ligi.snackengage.conditions.locale.IsOneOfTheseLocales;
-import org.ligi.snackengage.snacks.BetaTestSnack;
 import org.ligi.snackengage.snacks.DefaultRateSnack;
+import org.ligi.snackengage.snacks.GooglePlayOpenBetaTestSnack;
 import org.ligi.snackengage.snacks.TranslateSnack;
 
 public class DemoActivity extends AppCompatActivity {
@@ -27,9 +27,7 @@ public class DemoActivity extends AppCompatActivity {
                                                                                                                             new NeverAgainWhenClickedOnce(),
                                                                                                                             new AfterNumberOfOpportunities(10)))
                            .withSnack(new DefaultRateSnack())
-                           .withSnack(new BetaTestSnack("https://plus.google.com/105597594975384338151/posts/A8sFHUAKYz3").withConditions(new NeverAgainWhenClickedOnce(),
-                                                                                                                                          new AfterNumberOfOpportunities(
-                                                                                                                                                  42)))
+                           .withSnack(new GooglePlayOpenBetaTestSnack().withConditions(new NeverAgainWhenClickedOnce(), new AfterNumberOfOpportunities(42)))
                            .build()
                            .engageWhenAppropriate();
             }
