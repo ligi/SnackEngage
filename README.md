@@ -28,14 +28,15 @@ combine them as you wish and add your own conditions:
 
 ```java
 SnackEngage.from(view)
-           .withSnack(new TranslateSnack("https://www.transifex.com/projects/p/snackengage")
-                              .withConditions(new IsOneOfTheseLocales(Locale.CANADA),
-                                              new NeverAgainWhenClickedOnce(),
-                                              new AfterNumberOfOpportunities(10)))
            .withSnack(new DefaultRateSnack())
-           .withSnack(new BetaTestSnack("https://plus.google.com/105597594975384338151/posts/A8sFHUAKYz3")
+           .withSnack(new GooglePlayOpenBetaTestSnack()
                               .withConditions(new NeverAgainWhenClickedOnce(),
                                               new AfterNumberOfOpportunities(42)))
+           .withSnack(new TranslateSnack("https://www.transifex.com/projects/p/snackengage")
+                              .withConditions(new IsOneOfTheseLocales(Locale.CANADA),
+                              new NeverAgainWhenClickedOnce(),
+                              new AfterNumberOfOpportunities(10)))
+
            .build()
            .engageWhenAppropriate();
 ```
