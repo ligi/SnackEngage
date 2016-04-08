@@ -92,6 +92,9 @@ So the movements between SnackBar and FAB are coordinated
 
 [![Build Status](https://snap-ci.com/ligi/SnackEngage/branch/master/build_image)](https://snap-ci.com/ligi/SnackEngage/branch/master)
 
+[![Methodcount](https://img.shields.io/badge/Methods and size-core: 104 | deps: 15030 | 29 KB-e91e63.svg)](http://www.methodscount.com/?lib=org.ligi%3Asnackengage%3A0.4)
+
+
 ### License 
 The MIT License (MIT)
 
