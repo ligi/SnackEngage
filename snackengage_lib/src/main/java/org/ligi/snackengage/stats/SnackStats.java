@@ -14,6 +14,7 @@ public class SnackStats {
     private final static String KEY_OPPORTUNITY_COUNTER = "OPPORTUNITY_COUNTER";
     private final static String KEY_LAST_SNACK_SHOW = "KEY_LAST_SNACK_SHOW";
     private final static String KEY_LAST_SNACK_CLICK = "KEY_LAST_SNACK_CLICK";
+    private final static String KEY_TIMES_SHOWN = "KEY_TIMES_SHOWN";
 
 
     private final Context context;
@@ -48,6 +49,8 @@ public class SnackStats {
         editor.putLong(KEY_LAST_SNACK_SHOW, getOpportunityCount());
         editor.putLong(KEY_LAST_SNACK_SHOW + snack.getClass().getName(), getOpportunityCount());
 
+        editor.putInt(KEY_TIMES_SHOWN + snack.getClass().getName(), timesSnackWasShown(snack) + 1);
+
         editor.commit();
     }
 
@@ -62,6 +65,10 @@ public class SnackStats {
 
     public boolean wasSnackEverClicked(Snack snack) {
         return getPrefs().getLong(KEY_LAST_SNACK_CLICK + snack.getClass().getName(), 0L) > 0L;
+    }
+
+    public int timesSnackWasShown(Snack snack){
+        return getPrefs().getInt(KEY_TIMES_SHOWN + snack.getClass().getName(), 0);
     }
 
 }
