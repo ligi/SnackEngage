@@ -9,4 +9,9 @@ public class OpportunityIgnoringSnack implements Snack {
     public boolean opportunity(final SnackContext view) {
         return false;
     }
+
+    @Override
+    public String uniqueId() {
+        return "OPPORTUNITY_IGNORING";
+    }
 }
