@@ -11,4 +11,6 @@
     <string name="url_snack_msg">Curious?</string>
     <string name="url_snack_action">Visit Website!</string>
 
+    <string name="err_no_activity">Activity not found :-(</string>
+
 </resources>
