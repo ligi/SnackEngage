@@ -7,6 +7,11 @@ import org.ligi.snackengage.R;
 public class GooglePlayOpenBetaTestSnack extends AbstractOpenURLSnack {
 
     @Override
+    public String getId() {
+        return "OPEN_BETA";
+    }
+
+    @Override
     public String getText() {
         return getString(R.string.betatest_snack_msg);
     }

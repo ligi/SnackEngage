@@ -4,4 +4,5 @@ import org.ligi.snackengage.SnackContext;
 
 public interface Snack {
     boolean opportunity(SnackContext view);
+    String uniqueId();
 }

@@ -9,6 +9,8 @@ import org.ligi.snackengage.snacks.Snack;
 
 /**
  * mainly used for snacks to determine if they should show
+ *
+ * It stores snacks in the sharedPrefs by their unique ID.
  */
 public class SnackStats {
 
@@ -48,9 +50,9 @@ public class SnackStats {
         final SharedPreferences.Editor editor = getPrefs().edit();
 
         editor.putLong(KEY_LAST_SNACK_SHOW, getOpportunityCount());
-        editor.putLong(KEY_LAST_SNACK_SHOW + snack.getClass().getName(), getOpportunityCount());
+        editor.putLong(KEY_LAST_SNACK_SHOW + snack.uniqueId(), getOpportunityCount());
 
-        editor.putInt(KEY_TIMES_SHOWN + snack.getClass().getName(), timesSnackWasShown(snack) + 1);
+        editor.putInt(KEY_TIMES_SHOWN + snack.uniqueId(), timesSnackWasShown(snack) + 1);
 
         editor.commit();
     }
@@ -59,17 +61,17 @@ public class SnackStats {
         final SharedPreferences.Editor editor = getPrefs().edit();
 
         editor.putLong(KEY_LAST_SNACK_CLICK, getOpportunityCount());
-        editor.putLong(KEY_LAST_SNACK_CLICK + snack.getClass().getName(), getOpportunityCount());
+        editor.putLong(KEY_LAST_SNACK_CLICK + snack.uniqueId(), getOpportunityCount());
 
         editor.commit();
     }
 
     public boolean wasSnackEverClicked(Snack snack) {
-        return getPrefs().getLong(KEY_LAST_SNACK_CLICK + snack.getClass().getName(), 0L) > 0L;
+        return getPrefs().getLong(KEY_LAST_SNACK_CLICK + snack.uniqueId(), 0L) > 0L;
     }
 
     public int timesSnackWasShown(Snack snack) {
-        return getPrefs().getInt(KEY_TIMES_SHOWN + snack.getClass().getName(), 0);
+        return getPrefs().getInt(KEY_TIMES_SHOWN + snack.uniqueId(), 0);
     }
 
 }

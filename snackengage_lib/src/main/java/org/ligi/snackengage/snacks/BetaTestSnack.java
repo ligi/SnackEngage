@@ -5,7 +5,7 @@ import org.ligi.snackengage.R;
 public class BetaTestSnack extends OpenURLSnack {
 
     public BetaTestSnack(final String uriString) {
-        super(uriString);
+        super(uriString, "BETA_TEST");
     }
 
     @Override

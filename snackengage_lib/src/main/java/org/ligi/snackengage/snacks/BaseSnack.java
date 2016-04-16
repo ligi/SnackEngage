@@ -42,6 +42,7 @@ public abstract class BaseSnack implements Snack {
         actionText = actionText == null ? getActionText() : actionText;
         titleText = titleText == null ? getText() : titleText;
 
+        //noinspection WrongConstant
         Snackbar.make(snackContext.getRootView(), titleText, duration).setAction(actionText, new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -52,11 +53,20 @@ public abstract class BaseSnack implements Snack {
         return true;
     }
 
+    @Override
+    public String uniqueId() {
+        return getId();
+    }
+
+    public abstract String getId();
+
     public abstract void engage();
 
     public abstract String getText();
 
     public abstract String getActionText();
+
+
 
     protected String getString(@StringRes int res) {
         return snackContext.getAndroidContext().getString(res);

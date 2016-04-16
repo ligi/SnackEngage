@@ -7,6 +7,11 @@ import org.ligi.snackengage.R;
 public class RateSnack extends AbstractOpenURLSnack {
 
     @Override
+    public String getId() {
+        return "RATE_SNACK";
+    }
+
+    @Override
     public String getText() {
         return getString(R.string.rate_snack_msg);
     }
