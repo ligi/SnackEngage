@@ -9,4 +9,9 @@ public class OpportunityUsingSnack implements Snack {
     public boolean opportunity(final SnackContext view) {
         return true;
     }
+
+    @Override
+    public String uniqueId() {
+        return "OPPORTUNITY_USING";
+    }
 }
