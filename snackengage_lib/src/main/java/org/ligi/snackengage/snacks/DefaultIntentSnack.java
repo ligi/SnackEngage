@@ -8,7 +8,7 @@ public class DefaultIntentSnack extends AbstractOpenIntentSnack {
     String mTitleText;
     Intent mIntent;
 
-    public DefaultIntentSnack(Intent intent, String titleText, String actionText){
+    public DefaultIntentSnack(Intent intent, String titleText, String actionText) {
         this.mIntent = intent;
         this.mActionText = actionText;
         this.mTitleText = titleText;

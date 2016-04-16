@@ -2,6 +2,7 @@ package org.ligi.snackengage;
 
 import org.junit.Test;
 import org.ligi.snackengage.conditions.AfterNumberOfOpportunities;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 

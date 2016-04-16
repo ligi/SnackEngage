@@ -19,17 +19,10 @@ public abstract class BaseSnack implements Snack {
     public static final int DURATION_INDEFINITE = Snackbar.LENGTH_INDEFINITE;
     public static final int DURATION_SHORT = Snackbar.LENGTH_SHORT;
     public static final int DURATION_LONG = Snackbar.LENGTH_LONG;
-
-    @IntDef({DURATION_INDEFINITE, DURATION_SHORT, DURATION_LONG})
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface SnackDuration {
-    }
-
-    @SnackDuration
-    private int duration = DURATION_LONG;
-
     protected SnackContext snackContext;
     protected List<SnackCondition> conditionList = new ArrayList<>();
+    @SnackDuration
+    private int duration = DURATION_LONG;
 
     @Override
     public boolean opportunity(final SnackContext snackContext) {
@@ -71,5 +64,10 @@ public abstract class BaseSnack implements Snack {
     public Snack withConditions(SnackCondition... conditions) {
         Collections.addAll(conditionList, conditions);
         return this;
+    }
+
+    @IntDef({DURATION_INDEFINITE, DURATION_SHORT, DURATION_LONG})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface SnackDuration {
     }
 }

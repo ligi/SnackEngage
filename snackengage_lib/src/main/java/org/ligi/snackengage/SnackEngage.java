@@ -2,8 +2,10 @@ package org.ligi.snackengage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import java.util.List;
+
 import org.ligi.snackengage.snacks.Snack;
+
+import java.util.List;
 
 public class SnackEngage {
 
@@ -19,6 +21,14 @@ public class SnackEngage {
         this.snackContext = snackContext;
     }
 
+    public static SnackEngageBuilder from(View view) {
+        return new SnackEngageBuilder(view);
+    }
+
+    public static SnackEngageBuilder from(AppCompatActivity activity) {
+        return from(activity.findViewById(android.R.id.content));
+    }
+
     public boolean engageWhenAppropriate() {
         snackContext.getStats().registerOpportunity();
         for (final Snack snack : snacks) {
@@ -28,13 +38,5 @@ public class SnackEngage {
         }
 
         return false;
-    }
-
-    public static SnackEngageBuilder from(View view) {
-        return new SnackEngageBuilder(view);
-    }
-
-    public static SnackEngageBuilder from(AppCompatActivity activity) {
-        return from(activity.findViewById(android.R.id.content));
     }
 }

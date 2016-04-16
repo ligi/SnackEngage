@@ -1,9 +1,10 @@
 package org.ligi.snackengage.conditions.locale;
 
-import java.util.Locale;
 import org.ligi.snackengage.SnackContext;
 import org.ligi.snackengage.conditions.SnackCondition;
 import org.ligi.snackengage.snacks.Snack;
+
+import java.util.Locale;
 
 public class IsOneOfTheseLocales implements SnackCondition {
 

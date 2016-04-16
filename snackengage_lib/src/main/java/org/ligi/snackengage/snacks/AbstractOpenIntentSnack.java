@@ -6,7 +6,7 @@ import android.support.design.widget.Snackbar;
 
 import org.ligi.snackengage.R;
 
-public abstract class AbstractOpenIntentSnack extends BaseSnack{
+public abstract class AbstractOpenIntentSnack extends BaseSnack {
 
     protected abstract Intent getIntent();
 

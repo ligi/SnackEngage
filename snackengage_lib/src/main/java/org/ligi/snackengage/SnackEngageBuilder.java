@@ -1,9 +1,11 @@
 package org.ligi.snackengage;
 
 import android.view.View;
+
+import org.ligi.snackengage.snacks.Snack;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.ligi.snackengage.snacks.Snack;
 
 public class SnackEngageBuilder {
     private final View view;

@@ -3,6 +3,7 @@ package org.ligi.snackengage.stats;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
 import org.ligi.snackengage.snacks.Snack;
 
 
@@ -19,12 +20,12 @@ public class SnackStats {
 
     private final Context context;
 
-    protected SharedPreferences getPrefs() {
-        return PreferenceManager.getDefaultSharedPreferences(context);
-    }
-
     public SnackStats(final Context context) {
         this.context = context;
+    }
+
+    protected SharedPreferences getPrefs() {
+        return PreferenceManager.getDefaultSharedPreferences(context);
     }
 
     public long getOpportunitiesSinceLastSnack() {
@@ -67,7 +68,7 @@ public class SnackStats {
         return getPrefs().getLong(KEY_LAST_SNACK_CLICK + snack.getClass().getName(), 0L) > 0L;
     }
 
-    public int timesSnackWasShown(Snack snack){
+    public int timesSnackWasShown(Snack snack) {
         return getPrefs().getInt(KEY_TIMES_SHOWN + snack.getClass().getName(), 0);
     }
 
