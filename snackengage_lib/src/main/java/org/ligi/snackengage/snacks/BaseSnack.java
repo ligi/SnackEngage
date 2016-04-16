@@ -24,6 +24,9 @@ public abstract class BaseSnack implements Snack {
     @SnackDuration
     private int duration = DURATION_LONG;
 
+    private String actionText;
+    private String titleText;
+
     @Override
     public boolean opportunity(final SnackContext snackContext) {
         this.snackContext = snackContext;
@@ -36,7 +39,10 @@ public abstract class BaseSnack implements Snack {
 
         snackContext.getStats().registerSnackShow(this);
 
-        Snackbar.make(snackContext.getRootView(), getText(), duration).setAction(getActionText(), new View.OnClickListener() {
+        actionText = actionText == null ? getActionText() : actionText;
+        titleText = titleText == null ? getText() : titleText;
+
+        Snackbar.make(snackContext.getRootView(), titleText, duration).setAction(actionText, new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 snackContext.getStats().registerSnackClick(BaseSnack.this);
@@ -63,6 +69,16 @@ public abstract class BaseSnack implements Snack {
 
     public Snack withConditions(SnackCondition... conditions) {
         Collections.addAll(conditionList, conditions);
+        return this;
+    }
+
+    public Snack overrideActionText(String s) {
+        this.actionText = s;
+        return this;
+    }
+
+    public Snack overrideTitleText(String s) {
+        this.titleText = s;
         return this;
     }
 
