@@ -62,22 +62,22 @@ public abstract class BaseSnack implements Snack {
         return snackContext.getAndroidContext().getString(res);
     }
 
-    public Snack withDuration(@SnackDuration int duration) {
+    public BaseSnack withDuration(@SnackDuration int duration) {
         this.duration = duration;
         return this;
     }
 
-    public Snack withConditions(SnackCondition... conditions) {
+    public BaseSnack withConditions(SnackCondition... conditions) {
         Collections.addAll(conditionList, conditions);
         return this;
     }
 
-    public Snack overrideActionText(String s) {
+    public BaseSnack overrideActionText(String s) {
         this.actionText = s;
         return this;
     }
 
-    public Snack overrideTitleText(String s) {
+    public BaseSnack overrideTitleText(String s) {
         this.titleText = s;
         return this;
     }
