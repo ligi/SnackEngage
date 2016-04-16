@@ -6,7 +6,7 @@ public class TranslateSnack extends OpenURLSnack {
 
 
     public TranslateSnack(final String uriString) {
-        super(uriString);
+        super(uriString, "TRANSLATE");
     }
 
     @Override

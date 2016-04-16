@@ -1,6 +1,7 @@
 package org.ligi.snackengage.conditions.locale;
 
 import android.content.res.Resources;
+
 import org.ligi.snackengage.SnackContext;
 import org.ligi.snackengage.conditions.SnackCondition;
 import org.ligi.snackengage.snacks.Snack;

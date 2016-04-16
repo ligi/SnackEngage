@@ -1,9 +1,15 @@
 package org.ligi.snackengage.snacks;
 
 import android.net.Uri;
+
 import org.ligi.snackengage.R;
 
 public class GooglePlayOpenBetaTestSnack extends AbstractOpenURLSnack {
+
+    @Override
+    public String getId() {
+        return "OPEN_BETA";
+    }
 
     @Override
     public String getText() {

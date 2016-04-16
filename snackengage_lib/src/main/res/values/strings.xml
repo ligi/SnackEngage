@@ -1,14 +1,16 @@
 <resources>
     <string name="rate_snack_msg">Like?</string>
-    <string name="rate_snack_action">Rate!-)</string>
+    <string name="rate_snack_action">Rate!</string>
 
     <string name="betatest_snack_msg">Power-User?</string>
-    <string name="betatest_snack_action">Beta-Test!-)</string>
+    <string name="betatest_snack_action">Beta-Test!</string>
 
     <string name="translate_snack_msg">Linguist?</string>
-    <string name="translate_snack_action">Translate!-)</string>
+    <string name="translate_snack_action">Translate!</string>
 
     <string name="url_snack_msg">Curious?</string>
-    <string name="url_snack_action">Visit Website!-)</string>
+    <string name="url_snack_action">Visit Website!</string>
+
+    <string name="err_no_activity">Activity not found :-(</string>
 
 </resources>

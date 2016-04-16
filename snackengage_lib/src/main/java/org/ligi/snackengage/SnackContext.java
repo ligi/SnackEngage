@@ -2,6 +2,7 @@ package org.ligi.snackengage;
 
 import android.content.Context;
 import android.view.View;
+
 import org.ligi.snackengage.stats.SnackStats;
 
 public class SnackContext {

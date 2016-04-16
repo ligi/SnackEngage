@@ -1,10 +1,12 @@
 package org.ligi.snackengage;
 
-import java.util.ArrayList;
 import org.junit.Test;
 import org.ligi.snackengage.snacks.Snack;
 import org.ligi.snackengage.util.OpportunityIgnoringSnack;
 import org.ligi.snackengage.util.OpportunityUsingSnack;
+
+import java.util.ArrayList;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TheSnackEngage extends BaseTest {
@@ -30,13 +32,13 @@ public class TheSnackEngage extends BaseTest {
 
     @Test
     public void shouldNotEngageWhenThereIsOnlyMultipleOpportunityIgnoringSnack() {
-        SnackEngage tested = new SnackEngage(asSnackList(new OpportunityIgnoringSnack(),new OpportunityIgnoringSnack()), mockSnackContext);
+        SnackEngage tested = new SnackEngage(asSnackList(new OpportunityIgnoringSnack(), new OpportunityIgnoringSnack()), mockSnackContext);
         assertThat(tested.engageWhenAppropriate()).isFalse();
     }
 
     @Test
     public void shouldEngageWhenThereIsOpportunityIgnoringSnackButAlsoOpportunityUsingSnack() {
-        SnackEngage tested = new SnackEngage(asSnackList(new OpportunityIgnoringSnack(),new OpportunityUsingSnack()), mockSnackContext);
+        SnackEngage tested = new SnackEngage(asSnackList(new OpportunityIgnoringSnack(), new OpportunityUsingSnack()), mockSnackContext);
         assertThat(tested.engageWhenAppropriate()).isTrue();
     }
 
