@@ -6,7 +6,7 @@ Engage Users with a Snackbar from the design lib to e.g. rate or translate the a
 
 add this as dependency from jcenter
 ```groovy
-compile 'org.ligi:snackengage:0.4'
+compile 'org.ligi:snackengage:0.5'
 ```
 
 Just add this where you want ( e.g. in your onCreate )
@@ -92,8 +92,7 @@ So the movements between SnackBar and FAB are coordinated
 
 [![Build Status](https://snap-ci.com/ligi/SnackEngage/branch/master/build_image)](https://snap-ci.com/ligi/SnackEngage/branch/master)
 
-[![Methodcount](https://img.shields.io/badge/Methods and size-core: 104 | deps: 15030 | 29 KB-e91e63.svg)](http://www.methodscount.com/?lib=org.ligi%3Asnackengage%3A0.4)
-
+<a href="http://www.methodscount.com/?lib=org.ligi%3Asnackengage%3A0.5"><img src="https://img.shields.io/badge/Methods and size-core: 124 | deps: 19823 | 33 KB-e91e63.svg"></img></a>
 
 ### License 
 The MIT License (MIT)
