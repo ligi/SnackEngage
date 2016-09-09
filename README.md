@@ -9,7 +9,7 @@ add this as dependency from jcenter
 compile 'org.ligi:snackengage:0.5'
 ```
 
-Just add this where you want ( e.g. in your onCreate )
+Just add this where you want ( e.g. in the onCreate method of your entry activity )
 
 ```java
 SnackEngage.from(this).withSnack(new DefaultRateSnack()).build().engageWhenAppropriate();
