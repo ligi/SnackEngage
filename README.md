@@ -4,7 +4,9 @@ Engage Users with a Snackbar from the design lib to e.g. rate or translate the a
 
 ### How
 
-add this as dependency from jcenter
+get the dependency via jitpack: [![](https://jitpack.io/v/ligi/snackengage.svg)](https://jitpack.io/#ligi/snackengage)
+
+or from jcenter ( might be behind jitpack ) like this:
 ```groovy
 compile 'org.ligi:snackengage:0.5'
 ```
