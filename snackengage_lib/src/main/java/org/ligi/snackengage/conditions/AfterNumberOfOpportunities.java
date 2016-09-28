@@ -13,6 +13,6 @@ public class AfterNumberOfOpportunities implements SnackCondition {
 
     @Override
     public boolean isAppropriate(final SnackContext context, final Snack snack) {
-        return context.getStats().getOpportunitiesSinceLastSnack() > number;
+        return context.getStats().getOpportunitiesSinceLastSnack(snack) > number;
     }
 }

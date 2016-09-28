@@ -30,8 +30,8 @@ public class SnackEngage {
     }
 
     public boolean engageWhenAppropriate() {
-        snackContext.getStats().registerOpportunity();
         for (final Snack snack : snacks) {
+            snackContext.getStats().registerOpportunity(snack);
             if (snack.opportunity(snackContext)) {
                 return true;
             }

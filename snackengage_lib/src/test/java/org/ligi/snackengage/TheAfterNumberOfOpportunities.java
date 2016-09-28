@@ -11,7 +11,7 @@ public class TheAfterNumberOfOpportunities extends BaseTest {
     @Test
     public void shouldNotBeAppropriateIfNotPastOpportunities() {
         final AfterNumberOfOpportunities tested = new AfterNumberOfOpportunities(5);
-        when(mockSnackContext.getStats().getOpportunitiesSinceLastSnack()).thenReturn(5L);
+        when(mockSnackContext.getStats().getOpportunitiesSinceLastSnack(someSnack)).thenReturn(5L);
 
         assertThat(tested.isAppropriate(mockSnackContext, null)).isFalse();
     }
@@ -20,9 +20,9 @@ public class TheAfterNumberOfOpportunities extends BaseTest {
     @Test
     public void shouldBeAppropriateIfPastOpportunities() {
         final AfterNumberOfOpportunities tested = new AfterNumberOfOpportunities(5);
-        when(mockSnackContext.getStats().getOpportunitiesSinceLastSnack()).thenReturn(6L);
+        when(mockSnackContext.getStats().getOpportunitiesSinceLastSnack(someSnack)).thenReturn(6L);
 
-        assertThat(tested.isAppropriate(mockSnackContext, null)).isTrue();
+        assertThat(tested.isAppropriate(mockSnackContext, someSnack)).isTrue();
     }
 
 }
