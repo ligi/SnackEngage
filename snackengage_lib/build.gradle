@@ -1,7 +1,7 @@
 apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.library'
 
-def version = '0.5'
+def version = '0.6'
 
 android {
     compileSdkVersion 24
@@ -10,7 +10,7 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 24
-        versionCode 4
+        versionCode 6
         versionName version
     }
     buildTypes {
