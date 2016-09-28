@@ -1,6 +1,7 @@
 package org.ligi.snackengage.snacks;
 
 import android.support.annotation.IntDef;
+import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -42,15 +43,18 @@ public abstract class BaseSnack implements Snack {
         actionText = actionText == null ? getActionText() : actionText;
         titleText = titleText == null ? getText() : titleText;
 
-        //noinspection WrongConstant
-        Snackbar.make(snackContext.getRootView(), titleText, duration).setAction(actionText, new View.OnClickListener() {
+        createSnackBar(snackContext).show();
+        return true;
+    }
+
+    @NonNull
+    protected Snackbar createSnackBar(final SnackContext snackContext) {
+        return Snackbar.make(snackContext.getRootView(), titleText, duration).setAction(actionText, new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                snackContext.getStats().registerSnackClick(BaseSnack.this);
                 engage();
             }
-        }).show();
-        return true;
+        });
     }
 
     @Override
@@ -60,13 +64,13 @@ public abstract class BaseSnack implements Snack {
 
     public abstract String getId();
 
-    public abstract void engage();
+    public void engage() {
+        snackContext.getStats().registerSnackClick(BaseSnack.this);
+    }
 
     public abstract String getText();
 
     public abstract String getActionText();
-
-
 
     protected String getString(@StringRes int res) {
         return snackContext.getAndroidContext().getString(res);
