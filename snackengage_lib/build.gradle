@@ -1,7 +1,8 @@
 apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.library'
 
-def version = '0.6'
+def version_name = '0.7'
+def version_code = 7
 
 android {
     compileSdkVersion 24
@@ -10,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 24
-        versionCode 6
-        versionName version
+        versionCode version_code
+        versionName version_name
     }
     buildTypes {
         release {
@@ -36,7 +37,7 @@ apply plugin: 'maven'
 def groupId = 'org.ligi'
 def artifactId = 'snackengage'
 
-def localReleaseDest = "${buildDir}/release/${version}"
+def localReleaseDest = "${buildDir}/release/${version_name}"
 
 task androidJavadocs(type: Javadoc) {
     ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
@@ -57,7 +58,7 @@ uploadArchives {
     repositories.mavenDeployer {
         pom.groupId = groupId
         pom.artifactId = artifactId
-        pom.version = version
+        pom.version = version_name
         // Add other pom properties here if you want (developer details / licenses)
         repository(url: "file://${localReleaseDest}")
     }
@@ -66,12 +67,12 @@ uploadArchives {
 task zipRelease(type: Zip) {
     from localReleaseDest
     destinationDir buildDir
-    archiveName "release-${version}.zip"
+    archiveName "release-${version_name}.zip"
 }
 
 task generateRelease << {
-    println "Release ${version} can be found at ${localReleaseDest}/"
-    println "Release ${version} zipped can be found ${buildDir}/release-${version}.zip"
+    println "Release ${version_name} can be found at ${localReleaseDest}/"
+    println "Release ${version_name} zipped can be found ${buildDir}/release-${version_name}.zip"
 }
 
 generateRelease.dependsOn(uploadArchives)
