@@ -80,6 +80,26 @@ public class AfterNumberOfOpportunities implements SnackCondition {
 }
 ```
 
+you can also have a custom snack with an image added:
+
+![rate screenshot](doc/screenshots/with_icon_small.png)
+
+```java
+.withSnack(new OpenURLSnack("market://details?id=org.ligi.survivalmanual", "survival") {
+
+  @NonNull
+  @Override
+  protected Snackbar createSnackBar(final SnackContext snackContext) {
+    Snackbar snackbar = super.createSnackBar(snackContext);
+    final TextView textView = (TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
+    textView.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.survival, 0, 0, 0);
+    textView.setCompoundDrawablePadding(getResources().getDimensionPixelOffset(R.dimen.rhythm));
+    return snackbar;
+  }
+}.overrideTitleText("Other App by ligi:\nFree Offline Survival Guide")
+ .overrideActionText("Get It!")
+```
+
 ### Hints
 
 If you use a FloatingActionButton inside a CoordinatorLayout from the design-lib and they are not coordinated - pass a view into snackengage from which the Snackbar can find the CoordinatorLayout - e.g. the fab:
