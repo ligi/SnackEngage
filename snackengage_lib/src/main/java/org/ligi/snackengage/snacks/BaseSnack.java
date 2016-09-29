@@ -23,7 +23,7 @@ public abstract class BaseSnack implements Snack {
     protected SnackContext snackContext;
     protected List<SnackCondition> conditionList = new ArrayList<>();
     @SnackDuration
-    private int duration = DURATION_LONG;
+    private int duration = DURATION_INDEFINITE;
 
     private String actionText;
     private String titleText;
