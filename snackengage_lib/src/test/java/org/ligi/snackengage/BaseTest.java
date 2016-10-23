@@ -1,5 +1,6 @@
 package org.ligi.snackengage;
 
+import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -30,13 +31,17 @@ public abstract class BaseTest {
     @Mock
     NetworkInfo mockNetwork;
 
+    @Mock
+    Application mockApplication;
+
     protected Snack someSnack = new OpportunityUsingSnack();
 
     @Before
     public void before() {
         MockitoAnnotations.initMocks(this);
 
-        when(mockAndroidContext.getSystemService(Context.CONNECTIVITY_SERVICE)).thenReturn(mockConnectivityManager);
+        when(mockAndroidContext.getApplicationContext()).thenReturn(mockApplication);
+        when(mockApplication.getSystemService(Context.CONNECTIVITY_SERVICE)).thenReturn(mockConnectivityManager);
         when(mockSnackContext.getAndroidContext()).thenReturn(mockAndroidContext);
         when(mockConnectivityManager.getActiveNetworkInfo()).thenReturn(mockNetwork);
 

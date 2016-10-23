@@ -15,7 +15,7 @@ abstract class ConnectivityAwareCondition implements SnackCondition {
     protected void init(final Context context) {
 
         if (context.checkCallingOrSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED) {
-            connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            connectivityManager = (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
             activeNetwork = connectivityManager.getActiveNetworkInfo();
         }
