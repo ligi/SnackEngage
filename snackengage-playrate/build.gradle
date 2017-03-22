@@ -1,17 +1,18 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+
+def version_name = '0.9'
+def version_code = 9
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "org.ligi.snackengage"
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 3
-        versionName "0.3"
+        versionCode version_code
+        versionName version_name
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -21,5 +22,6 @@ android {
 }
 
 dependencies {
-    compile project(':snackengage-playrate')
+    compile project(':snackengage-core')
 }
+

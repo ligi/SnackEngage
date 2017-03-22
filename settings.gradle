@@ -1,1 +1,1 @@
-include ':demo_app', ':snackengage_lib'
+include ':demo_app', ':snackengage-core', ':snackengage-playrate', ':snackengage-amazonrate'
