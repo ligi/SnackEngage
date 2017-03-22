@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
-def version_name = '0.9'
-def version_code = 9
+def version_name = '0.10'
+def version_code = 10
 
 android {
     compileSdkVersion 25
