@@ -22,7 +22,7 @@ public class RateSnack extends AbstractOpenURLSnack {
     }
 
     @Override
-    protected Uri getUri() {
+    public Uri getUri() {
         return Uri.parse("amzn://apps/android?p=" + snackContext.getAndroidContext().getPackageName());
     }
 
