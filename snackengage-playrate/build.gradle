@@ -1,8 +1,5 @@
 apply plugin: 'com.android.library'
 
-def version_name = '0.11'
-def version_code = 11
-
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
