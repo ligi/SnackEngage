@@ -1,7 +1,7 @@
 package org.ligi.snackengage.snacks;
 
+import android.content.Context;
 import android.net.Uri;
-
 import org.ligi.snackengage.R;
 
 public class RateSnack extends AbstractOpenURLSnack {
@@ -23,7 +23,11 @@ public class RateSnack extends AbstractOpenURLSnack {
 
     @Override
     public Uri getUri() {
-        return Uri.parse("amzn://apps/android?p=" + snackContext.getAndroidContext().getPackageName());
+        return getUri(snackContext.getAndroidContext());
+    }
+
+    public Uri getUri(Context context) {
+        return Uri.parse("amzn://apps/android?p=" + context.getPackageName());
     }
 
 }
