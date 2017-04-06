@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 2.3.1">
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="        editor.commit();"
+        errorLine2="        ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/org/ligi/snackengage/stats/SnackStats.java"
+            line="55"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="        editor.commit();"
+        errorLine2="        ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/org/ligi/snackengage/stats/SnackStats.java"
+            line="63"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NewerVersionAvailable"
+        message="A newer version of org.mockito:mockito-core than 1.9.5 is available: 2.7.21"
+        errorLine1="    testCompile &apos;org.mockito:mockito-core:1.9.5&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="38"
+            column="5"/>
+    </issue>
+
+</issues>
