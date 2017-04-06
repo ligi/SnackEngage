@@ -110,9 +110,7 @@ SnackEngage.from(fab)..;
 
 So the movements between SnackBar and FAB are coordinated
 
-### Build Status
-
-[![Build Status](https://snap-ci.com/ligi/SnackEngage/branch/master/build_image)](https://snap-ci.com/ligi/SnackEngage/branch/master)
+### Methods
 
 <a href="http://www.methodscount.com/?lib=org.ligi%3Asnackengage%3A0.5"><img src="https://img.shields.io/badge/Methods and size-core: 124 | deps: 19823 | 33 KB-e91e63.svg"></img></a>
 
