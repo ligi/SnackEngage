@@ -1,7 +1,7 @@
 buildscript {
     ext {
-        version_name = '0.12'
-        version_code = 12
+        version_name = '0.13'
+        version_code = 13
     }
     repositories {
         jcenter()
