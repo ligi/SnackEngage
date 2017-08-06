@@ -19,6 +19,7 @@ android {
 
     lintOptions {
         baseline file("../.ci/lint-baseline-playrate.xml")
+        ignore 'OldTargetApi'
         checkAllWarnings true
         warningsAsErrors true
     }

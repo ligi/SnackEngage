@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<issues format="4" by="lint 2.3.1">
+<issues format="4" by="lint 2.3.3">
 
     <issue
         id="ApplySharedPref"
@@ -24,14 +24,14 @@
     </issue>
 
     <issue
-        id="NewerVersionAvailable"
-        message="A newer version of org.mockito:mockito-core than 1.9.5 is available: 2.7.21"
-        errorLine1="    testCompile &apos;org.mockito:mockito-core:1.9.5&apos;"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        errorLine1="        targetSdkVersion 25"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
         <location
             file="build.gradle"
-            line="38"
-            column="5"/>
+            line="9"
+            column="9"/>
     </issue>
 
 </issues>
