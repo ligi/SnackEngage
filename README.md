@@ -1,30 +1,30 @@
 ### What
 
-Engage Users with a Snackbar from the design lib to e.g. rate or translate the app.
+Engage users with a [Snackbar][material-snackbars] from the design lib to e.g. rate or translate the app.
 
 ### How
 
-get the dependency via jitpack: [![](https://jitpack.io/v/ligi/snackengage.svg)](https://jitpack.io/#ligi/snackengage)
+Get the dependency via JitPack: [![](https://jitpack.io/v/ligi/snackengage.svg)](https://jitpack.io/#ligi/snackengage)
 
-or from jcenter ( might be behind jitpack ) like this:
+or from JCenter ( might be behind JitPack ) like this:
 ```groovy
-compile 'org.ligi:snackengage:0.5'
+compile "org.ligi:snackengage:$version"
 ```
 
-Just add this where you want ( e.g. in the onCreate method of your entry activity )
+Just add this where you want ( e.g. in the `onCreate` method of your entry activity )
 
 ```java
 SnackEngage.from(this).withSnack(new DefaultRateSnack()).build().engageWhenAppropriate();
 ```
 
-This would then show this snack after some opportunities and never again when once clicked on Rate ( which bings you to play-store or fdroid - anything that accepts the generated market:// link )
+This would than show this snack after some opportunities and never again when once clicked on `Rate` ( which takes you to Play store or F-Droid - anything that accepts the generated `market://` link )
 
 ![rate screenshot](doc/screenshots/rate_small.png)
 
 #### Other snacks that are possible:
 ![rate screenshot](doc/screenshots/betatest_small.png) ![rate screenshot](doc/screenshots/translate_small.png)
 
-or create your own snack - e.g. to make a survey. 
+or create your own snack - e.g. to make a survey.
 
 combine them as you wish and add your own conditions:
 
@@ -45,7 +45,7 @@ SnackEngage.from(view)
 
 ### Why
 
-This lib came to exist because I wanted something like [discreet-app-rate](https://github.com/PomepuyN/discreet-app-rate) - but using a SnackBar from the new material design support lib which was emerging at google-io 2015.
+This lib came to exist because I wanted something like [discreet-app-rate](https://github.com/PomepuyN/discreet-app-rate) - but using a Snackbar from the new material design support lib which was emerging at Google I/O 2015.
 After thinking about it I wanted to make it more broad - not only for rating - also engaging users by pointing them to beta-testing and translation.
 
 ### Details
@@ -108,16 +108,16 @@ If you use a FloatingActionButton inside a CoordinatorLayout from the design-lib
 SnackEngage.from(fab)..;
 ```
 
-So the movements between SnackBar and FAB are coordinated
+So the movements between Snackbar and FAB are coordinated
 
 ### Methods
 
 <a href="http://www.methodscount.com/?lib=org.ligi%3Asnackengage%3A0.5"><img src="https://img.shields.io/badge/Methods and size-core: 124 | deps: 19823 | 33 KB-e91e63.svg"></img></a>
 
-### License 
+### License
 The MIT License (MIT)
 
-Copyright (c) 2015/2016 ligi
+Copyright (c) 2015-2017 ligi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -137,3 +137,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+
+[material-snackbars]: https://material.io/guidelines/components/snackbars-toasts.html
