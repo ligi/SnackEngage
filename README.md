@@ -1,6 +1,6 @@
 ### What
 
-Engage users with a Snackbar from the design lib to e.g. rate or translate the app.
+Engage users with a [Snackbar][material-snackbars] from the design lib to e.g. rate or translate the app.
 
 ### How
 
@@ -137,3 +137,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+
+[material-snackbars]: https://material.io/guidelines/components/snackbars-toasts.html
