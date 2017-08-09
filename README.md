@@ -8,7 +8,7 @@ Get the dependency via JitPack: [![](https://jitpack.io/v/ligi/snackengage.svg)]
 
 or from JCenter ( might be behind JitPack ) like this:
 ```groovy
-compile 'org.ligi:snackengage:0.5'
+compile "org.ligi:snackengage:$version"
 ```
 
 Just add this where you want ( e.g. in the `onCreate` method of your entry activity )
