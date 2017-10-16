@@ -1,6 +1,7 @@
 package org.ligi.snackengage.snacks;
 
 import android.support.annotation.CallSuper;
+import android.content.Context;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
@@ -21,6 +22,7 @@ public abstract class BaseSnack implements Snack {
     public static final int DURATION_SHORT = Snackbar.LENGTH_SHORT;
     public static final int DURATION_LONG = Snackbar.LENGTH_LONG;
     protected SnackContext snackContext;
+    protected String packageName = null;
     protected List<SnackCondition> conditionList = new ArrayList<>();
     @SnackDuration
     private int duration = DURATION_INDEFINITE;
@@ -69,6 +71,11 @@ public abstract class BaseSnack implements Snack {
         });
     }
 
+    @NonNull
+    protected String getPackageName(@NonNull Context context) {
+        return packageName == null ? context.getPackageName() : packageName;
+    }
+
     @Override
     public String uniqueId() {
         return getId();
@@ -96,6 +103,11 @@ public abstract class BaseSnack implements Snack {
 
     public BaseSnack withConditions(SnackCondition... conditions) {
         Collections.addAll(conditionList, conditions);
+        return this;
+    }
+
+    public BaseSnack overridePackageName(String packageName) {
+        this.packageName = packageName;
         return this;
     }
 
