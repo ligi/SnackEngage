@@ -27,6 +27,7 @@ public abstract class BaseSnack implements Snack {
     private String actionText;
     private String titleText;
     private Integer actionColor = null;
+    private Integer backgroundColor = null;
 
     @Override
     public boolean opportunity(final SnackContext snackContext) {
@@ -53,6 +54,10 @@ public abstract class BaseSnack implements Snack {
 
         if (actionColor != null) {
             snackbar.setActionTextColor(actionColor);
+        }
+        if (backgroundColor != null) {
+            View snackBarView = snackbar.getView();
+            snackBarView.setBackgroundColor(backgroundColor);
         }
 
         return snackbar.setAction(actionText, new View.OnClickListener() {
@@ -104,6 +109,10 @@ public abstract class BaseSnack implements Snack {
 
     public void setActionColor(@ColorInt int color) {
         actionColor = color;
+    }
+
+    public void setBackgroundColor(@ColorInt int color) {
+        backgroundColor = color;
     }
 
     @IntDef({DURATION_INDEFINITE, DURATION_SHORT, DURATION_LONG})
