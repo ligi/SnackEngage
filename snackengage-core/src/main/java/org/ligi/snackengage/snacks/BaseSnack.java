@@ -1,5 +1,6 @@
 package org.ligi.snackengage.snacks;
 
+import android.support.annotation.CallSuper;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
@@ -70,6 +71,7 @@ public abstract class BaseSnack implements Snack {
 
     public abstract String getId();
 
+    @CallSuper
     public void engage() {
         snackContext.getStats().registerSnackClick(BaseSnack.this);
     }
