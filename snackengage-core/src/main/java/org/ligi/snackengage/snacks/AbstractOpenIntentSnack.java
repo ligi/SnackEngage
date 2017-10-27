@@ -12,6 +12,7 @@ public abstract class AbstractOpenIntentSnack extends BaseSnack {
 
     @Override
     public void engage() {
+        super.engage();
         try {
             snackContext.getAndroidContext().startActivity(getIntent());
         } catch (ActivityNotFoundException e) {

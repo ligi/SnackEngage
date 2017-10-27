@@ -13,6 +13,7 @@ public abstract class AbstractOpenURLSnack extends BaseSnack {
 
     @Override
     public void engage() {
+        super.engage();
         try {
             final Intent intent = new Intent(Intent.ACTION_VIEW, getUri());
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
