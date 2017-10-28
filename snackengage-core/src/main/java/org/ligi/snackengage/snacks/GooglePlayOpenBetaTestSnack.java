@@ -23,6 +23,6 @@ public class GooglePlayOpenBetaTestSnack extends AbstractOpenURLSnack {
 
     @Override
     protected Uri getUri() {
-        return Uri.parse("https://play.google.com/apps/testing/" + snackContext.getAndroidContext().getPackageName());
+        return Uri.parse("https://play.google.com/apps/testing/" + getPackageName(snackContext.getAndroidContext()));
     }
 }

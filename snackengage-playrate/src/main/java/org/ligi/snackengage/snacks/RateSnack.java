@@ -27,7 +27,7 @@ public class RateSnack extends AbstractOpenURLSnack {
     }
 
     public Uri getUri(Context context) {
-        return Uri.parse("https://play.google.com/store/apps/details?id=" + context.getPackageName());
+        return Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName(context));
     }
 
 }
