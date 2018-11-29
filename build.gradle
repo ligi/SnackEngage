@@ -2,8 +2,8 @@ apply plugin: "com.github.ben-manes.versions"
 
 buildscript {
     ext {
-        version_name = '0.15'
-        version_code = 15
+        version_name = '0.16'
+        version_code = 16
     }
     repositories {
         jcenter()
