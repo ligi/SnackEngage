@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SnackEngage</string>
+    <string name="button_text">ENGAGE</string>
 </resources>
