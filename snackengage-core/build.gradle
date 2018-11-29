@@ -21,6 +21,7 @@ android {
     lintOptions {
         baseline file("../.ci/lint-baseline-lib.xml")
         ignore 'OldTargetApi'
+        ignore 'NewerVersionAvailable'
         checkAllWarnings true
         warningsAsErrors true
     }

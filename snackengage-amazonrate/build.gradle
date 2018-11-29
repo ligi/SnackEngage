@@ -19,7 +19,7 @@ android {
 
     lintOptions {
         baseline file("../.ci/lint-baseline-amazonrate.xml")
-        ignore 'OldTargetApi'
+        ignore 'NewerVersionAvailable'
         checkAllWarnings true
         warningsAsErrors true
     }
