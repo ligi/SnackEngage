@@ -1,5 +1,6 @@
 package org.ligi.snackengage.conditions.connectivity;
 
+import android.annotation.SuppressLint;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -20,6 +21,7 @@ public class IsConnectedUnMeteredOrUnknown extends ConnectivityAwareCondition {
 
     }
 
+    @SuppressLint("MissingPermission")
     protected boolean checkConnection(final ConnectivityManager cm, final NetworkInfo activeNetwork) {
         if (Build.VERSION.SDK_INT >= 16) {
             return !cm.isActiveNetworkMetered();
