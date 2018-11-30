@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion "28.0.3"
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 25
+        minSdkVersion 14
+        targetSdkVersion 26
         versionCode version_code
         versionName version_name
     }
@@ -20,8 +20,6 @@ android {
 
     lintOptions {
         baseline file("../.ci/lint-baseline-playrate.xml")
-        ignore 'MinSdkTooLow'
-        ignore 'ExpiredTargetSdkVersion'
         ignore 'NewerVersionAvailable'
         checkAllWarnings true
         warningsAsErrors true
