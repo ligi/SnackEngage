@@ -19,6 +19,8 @@ android {
 
     lintOptions {
         baseline file("../.ci/lint-baseline-amazonrate.xml")
+        ignore 'MinSdkTooLow'
+        ignore 'ExpiredTargetSdkVersion'
         ignore 'NewerVersionAvailable'
         checkAllWarnings true
         warningsAsErrors true

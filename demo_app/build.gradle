@@ -20,6 +20,8 @@ android {
     }
 
     lintOptions {
+        ignore 'MinSdkTooLow'
+        ignore 'ExpiredTargetSdkVersion'
         ignore 'GradleDependency'
     }
 }
