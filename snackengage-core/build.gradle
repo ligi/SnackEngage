@@ -19,6 +19,8 @@ android {
 
     lintOptions {
         baseline file("../.ci/lint-baseline-lib.xml")
+        ignore 'MinSdkTooLow'
+        ignore 'ExpiredTargetSdkVersion'
         ignore 'OldTargetApi'
         ignore 'NewerVersionAvailable'
         ignore 'GradleDependency'
