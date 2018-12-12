@@ -1,5 +1,6 @@
 package org.ligi.snackengage;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -9,23 +10,27 @@ import java.util.List;
 
 public class SnackEngage {
 
+    @NonNull
     private final List<Snack> snacks;
+    @NonNull
     private final SnackContext snackContext;
 
-    public SnackEngage(final List<Snack> snacks, final View view) {
+    public SnackEngage(@NonNull final List<Snack> snacks, @NonNull final View view) {
         this(snacks, new SnackContext(view));
     }
 
-    public SnackEngage(final List<Snack> snacks, final SnackContext snackContext) {
+    public SnackEngage(@NonNull final List<Snack> snacks, @NonNull final SnackContext snackContext) {
         this.snacks = snacks;
         this.snackContext = snackContext;
     }
 
-    public static SnackEngageBuilder from(View view) {
+    @NonNull
+    public static SnackEngageBuilder from(@NonNull View view) {
         return new SnackEngageBuilder(view);
     }
 
-    public static SnackEngageBuilder from(AppCompatActivity activity) {
+    @NonNull
+    public static SnackEngageBuilder from(@NonNull AppCompatActivity activity) {
         return from(activity.findViewById(android.R.id.content));
     }
 

@@ -1,6 +1,7 @@
 package org.ligi.snackengage_demo;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -19,7 +20,7 @@ import java.util.Locale;
 
 public class DemoActivity extends AppCompatActivity {
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
+    protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.content);

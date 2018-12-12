@@ -3,6 +3,8 @@ package org.ligi.snackengage.stats;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+
 import org.ligi.snackengage.snacks.Snack;
 
 
@@ -18,34 +20,36 @@ public class SnackStats {
     private final static String KEY_LAST_SNACK_CLICK = "KEY_LAST_SNACK_CLICK";
     private final static String KEY_TIMES_SHOWN = "KEY_TIMES_SHOWN";
 
+    @NonNull
     private final Context context;
 
-    public SnackStats(final Context context) {
+    public SnackStats(@NonNull final Context context) {
         this.context = context;
     }
 
+    @NonNull
     protected SharedPreferences getPrefs() {
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
 
-    public long getOpportunitiesSinceLastSnack(final Snack snack) {
+    public long getOpportunitiesSinceLastSnack(@NonNull final Snack snack) {
         return getOpportunityCount(snack) - getLastSnackShow(snack);
     }
 
-    private long getOpportunityCount(final Snack snack) {
+    private long getOpportunityCount(@NonNull final Snack snack) {
         return getPrefs().getLong(KEY_OPPORTUNITY_COUNTER + snack.uniqueId(), 0);
     }
 
-    private long getLastSnackShow(final Snack snack) {
+    private long getLastSnackShow(@NonNull final Snack snack) {
         return getPrefs().getLong(KEY_LAST_SNACK_SHOW + snack.uniqueId(), 0);
     }
 
-    public void registerOpportunity(final Snack snack) {
+    public void registerOpportunity(@NonNull final Snack snack) {
         getPrefs().edit().putLong(KEY_OPPORTUNITY_COUNTER + snack.uniqueId(), getOpportunityCount(snack) + 1).apply();
 
     }
 
-    public void registerSnackShow(Snack snack) {
+    public void registerSnackShow(@NonNull Snack snack) {
         final SharedPreferences.Editor editor = getPrefs().edit();
 
         editor.putLong(KEY_LAST_SNACK_SHOW + snack.uniqueId(), getOpportunityCount(snack));
@@ -55,7 +59,7 @@ public class SnackStats {
         editor.commit();
     }
 
-    public void registerSnackClick(Snack snack) {
+    public void registerSnackClick(@NonNull Snack snack) {
         final SharedPreferences.Editor editor = getPrefs().edit();
 
         editor.putLong(KEY_LAST_SNACK_CLICK + snack.uniqueId(), getOpportunityCount(snack));
@@ -63,11 +67,11 @@ public class SnackStats {
         editor.commit();
     }
 
-    public boolean wasSnackEverClicked(Snack snack) {
+    public boolean wasSnackEverClicked(@NonNull Snack snack) {
         return getPrefs().getLong(KEY_LAST_SNACK_CLICK + snack.uniqueId(), 0L) > 0L;
     }
 
-    public int timesSnackWasShown(Snack snack) {
+    public int timesSnackWasShown(@NonNull Snack snack) {
         return getPrefs().getInt(KEY_TIMES_SHOWN + snack.uniqueId(), 0);
     }
 

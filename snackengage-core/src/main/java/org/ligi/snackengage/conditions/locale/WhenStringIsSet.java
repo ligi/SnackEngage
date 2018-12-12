@@ -1,6 +1,7 @@
 package org.ligi.snackengage.conditions.locale;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import org.ligi.snackengage.SnackContext;
 import org.ligi.snackengage.conditions.SnackCondition;
@@ -15,7 +16,7 @@ public class WhenStringIsSet implements SnackCondition {
     }
 
     @Override
-    public boolean isAppropriate(final SnackContext context, final Snack snack) {
+    public boolean isAppropriate(@NonNull final SnackContext context, @NonNull final Snack snack) {
         try {
             context.getAndroidContext().getString(StringResId);
             return true;

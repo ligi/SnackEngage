@@ -7,20 +7,24 @@ import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+
+import org.ligi.snackengage.SnackContext;
+import org.ligi.snackengage.conditions.SnackCondition;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.ligi.snackengage.SnackContext;
-import org.ligi.snackengage.conditions.SnackCondition;
 
 public abstract class BaseSnack implements Snack {
 
     public static final int DURATION_INDEFINITE = Snackbar.LENGTH_INDEFINITE;
     public static final int DURATION_SHORT = Snackbar.LENGTH_SHORT;
     public static final int DURATION_LONG = Snackbar.LENGTH_LONG;
+    @NonNull
     protected SnackContext snackContext;
+    @NonNull
     protected List<SnackCondition> conditionList = new ArrayList<>();
     @SnackDuration
     private int duration = DURATION_INDEFINITE;
@@ -31,7 +35,7 @@ public abstract class BaseSnack implements Snack {
     private Integer backgroundColor = null;
 
     @Override
-    public boolean opportunity(final SnackContext snackContext) {
+    public boolean opportunity(@NonNull final SnackContext snackContext) {
         this.snackContext = snackContext;
 
         for (final SnackCondition snackCondition : conditionList) {
@@ -50,7 +54,7 @@ public abstract class BaseSnack implements Snack {
     }
 
     @NonNull
-    protected Snackbar createSnackBar(final SnackContext snackContext) {
+    protected Snackbar createSnackBar(@NonNull final SnackContext snackContext) {
         final Snackbar snackbar = Snackbar.make(snackContext.getRootView(), titleText, duration);
 
         if (actionColor != null) {
@@ -69,11 +73,13 @@ public abstract class BaseSnack implements Snack {
         });
     }
 
+    @NonNull
     @Override
     public String uniqueId() {
         return getId();
     }
 
+    @NonNull
     public abstract String getId();
 
     @CallSuper
@@ -81,30 +87,37 @@ public abstract class BaseSnack implements Snack {
         snackContext.getStats().registerSnackClick(BaseSnack.this);
     }
 
+    @NonNull
     public abstract String getText();
 
+    @NonNull
     public abstract String getActionText();
 
+    @NonNull
     protected String getString(@StringRes int res) {
         return snackContext.getAndroidContext().getString(res);
     }
 
+    @NonNull
     public BaseSnack withDuration(@SnackDuration int duration) {
         this.duration = duration;
         return this;
     }
 
-    public BaseSnack withConditions(SnackCondition... conditions) {
+    @NonNull
+    public BaseSnack withConditions(@NonNull SnackCondition... conditions) {
         Collections.addAll(conditionList, conditions);
         return this;
     }
 
-    public BaseSnack overrideActionText(String s) {
+    @NonNull
+    public BaseSnack overrideActionText(@NonNull String s) {
         this.actionText = s;
         return this;
     }
 
-    public BaseSnack overrideTitleText(String s) {
+    @NonNull
+    public BaseSnack overrideTitleText(@NonNull String s) {
         this.titleText = s;
         return this;
     }
