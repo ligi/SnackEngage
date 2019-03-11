@@ -26,5 +26,6 @@ android {
 }
 
 dependencies {
-    compile project(':snackengage-playrate')
+    implementation project(':snackengage-playrate')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
 }
