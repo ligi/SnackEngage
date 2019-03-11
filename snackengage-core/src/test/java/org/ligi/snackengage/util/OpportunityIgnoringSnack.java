@@ -12,6 +12,7 @@ public class OpportunityIgnoringSnack implements Snack {
         return false;
     }
 
+    @NonNull
     @Override
     public String uniqueId() {
         return "OPPORTUNITY_IGNORING";
