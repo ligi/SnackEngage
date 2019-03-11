@@ -21,6 +21,7 @@ android {
     lintOptions {
         baseline file("../.ci/lint-baseline-amazonrate.xml")
         ignore 'NewerVersionAvailable'
+        ignore 'GradleDependency'
         checkAllWarnings true
         warningsAsErrors true
     }
@@ -28,6 +29,7 @@ android {
 }
 
 dependencies {
-    compile project(':snackengage-core')
+    api project(':snackengage-core')
+    implementation 'com.android.support:support-annotations:27.1.1'
 }
 
