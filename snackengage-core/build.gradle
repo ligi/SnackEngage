@@ -36,5 +36,5 @@ dependencies {
     testImplementation 'com.android.support:support-annotations:27.1.1'
     testImplementation 'junit:junit:4.12'
 
-    testImplementation 'org.mockito:mockito-core:2.27.0'
+    testImplementation 'org.mockito:mockito-core:2.28.0'
 }
