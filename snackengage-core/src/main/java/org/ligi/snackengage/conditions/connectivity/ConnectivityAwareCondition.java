@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.content.ContextCompat;
+
 import org.ligi.snackengage.conditions.SnackCondition;
 
 abstract class ConnectivityAwareCondition implements SnackCondition {
@@ -17,7 +19,7 @@ abstract class ConnectivityAwareCondition implements SnackCondition {
     protected void init(final Context context) {
 
         if (context.checkCallingOrSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED) {
-            connectivityManager = (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+            connectivityManager = ContextCompat.getSystemService(context, ConnectivityManager.class);
 
             activeNetwork = connectivityManager.getActiveNetworkInfo();
         }
