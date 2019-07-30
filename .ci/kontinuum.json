@@ -1,4 +1,17 @@
 {
-"type":"android",
-"stages":["lint","test","assemble"]
+  "type": "android",
+  "stages": [
+    {
+      "name": "lint",
+      "needsEmulator": false
+    },
+    {
+      "name": "test",
+      "needsEmulator": false
+    },
+    {
+      "name": "assemble",
+      "needsEmulator": false
+    }
+  ]
 }
