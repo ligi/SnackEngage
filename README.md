@@ -43,7 +43,7 @@ SnackEngage.from(view)
            .engageWhenAppropriate();
 ```
 
-The rate snack exists in different versions: snackengage-amazonrate and snackengage-amazonrate. You can use them in different flavors of your app.
+The rate snack exists in different versions: snackengage-playrate and snackengage-amazonrate. You can use them in different flavors of your app.
 
 ### Why
 
