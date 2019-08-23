@@ -43,6 +43,8 @@ SnackEngage.from(view)
            .engageWhenAppropriate();
 ```
 
+The rate snack exists in different versions: snackengage-playrate and snackengage-amazonrate. You can use them in different flavors of your app.
+
 ### Why
 
 This lib came to exist because I wanted something like [discreet-app-rate](https://github.com/PomepuyN/discreet-app-rate) - but using a Snackbar from the new material design support lib which was emerging at Google I/O 2015.
