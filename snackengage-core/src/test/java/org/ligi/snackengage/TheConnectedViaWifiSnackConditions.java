@@ -3,8 +3,10 @@ package org.ligi.snackengage;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+
 import org.junit.Test;
 import org.ligi.snackengage.conditions.connectivity.IsConnectedViaWiFiOrUnknown;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
