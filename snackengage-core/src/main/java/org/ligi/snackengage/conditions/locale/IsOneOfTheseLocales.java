@@ -1,6 +1,6 @@
 package org.ligi.snackengage.conditions.locale;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import org.ligi.snackengage.SnackContext;
 import org.ligi.snackengage.conditions.SnackCondition;

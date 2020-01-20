@@ -1,6 +1,6 @@
 package org.ligi.snackengage.conditions.connectivity;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import org.ligi.snackengage.SnackContext;
 import org.ligi.snackengage.snacks.Snack;

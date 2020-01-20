@@ -1,7 +1,8 @@
 package org.ligi.snackengage;
 
-import android.support.annotation.NonNull;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 
 import org.ligi.snackengage.snacks.Snack;
 

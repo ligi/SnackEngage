@@ -2,7 +2,8 @@ package org.ligi.snackengage;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import org.junit.Test;
 import org.ligi.snackengage.conditions.connectivity.IsConnectedOrUnknown;

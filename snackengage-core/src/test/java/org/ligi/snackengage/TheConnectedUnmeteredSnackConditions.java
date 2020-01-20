@@ -4,10 +4,13 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.os.Build;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
+
 import org.junit.Test;
 import org.ligi.snackengage.conditions.connectivity.IsConnectedUnMeteredOrUnknown;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
