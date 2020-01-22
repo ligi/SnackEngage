@@ -2,8 +2,8 @@ apply plugin: "com.github.ben-manes.versions"
 
 buildscript {
     ext {
-        version_name = '0.22'
-        version_code = 22
+        version_name = '0.23'
+        version_code = 23
     }
     repositories {
         google()
