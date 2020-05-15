@@ -16,10 +16,10 @@ import org.ligi.snackengage.snacks.Snack;
  */
 public class SnackStats {
 
-    private final static String KEY_OPPORTUNITY_COUNTER = "OPPORTUNITY_COUNTER";
-    private final static String KEY_LAST_SNACK_SHOW = "KEY_LAST_SNACK_SHOW";
-    private final static String KEY_LAST_SNACK_CLICK = "KEY_LAST_SNACK_CLICK";
-    private final static String KEY_TIMES_SHOWN = "KEY_TIMES_SHOWN";
+    private static final String KEY_OPPORTUNITY_COUNTER = "OPPORTUNITY_COUNTER";
+    private static final String KEY_LAST_SNACK_SHOW = "KEY_LAST_SNACK_SHOW";
+    private static final String KEY_LAST_SNACK_CLICK = "KEY_LAST_SNACK_CLICK";
+    private static final String KEY_TIMES_SHOWN = "KEY_TIMES_SHOWN";
 
     @NonNull
     private final Context context;
