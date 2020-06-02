@@ -1,19 +1,17 @@
+import static org.ligi.snackengage.Dependencies.GradlePlugins
+
 apply plugin: "com.github.ben-manes.versions"
 
 buildscript {
-    ext {
-        version_name = '0.24'
-        version_code = 24
-    }
     repositories {
         google()
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.28.0'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath GradlePlugins.ANDROID
+        classpath GradlePlugins.MAVEN
+        classpath GradlePlugins.VERSIONS
     }
 }
 

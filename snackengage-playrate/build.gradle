@@ -1,15 +1,18 @@
+import static org.ligi.snackengage.Dependencies.Android
+import static org.ligi.snackengage.Dependencies.Libs
+
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "29.0.3"
+    compileSdkVersion Android.COMPILE_SDK_VERSION
+    buildToolsVersion Android.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
-        versionCode version_code
-        versionName version_name
+        minSdkVersion Android.MIN_SDK_VERSION
+        targetSdkVersion Android.TARGET_SDK_VERSION
+        versionCode Android.VERSION_CODE
+        versionName Android.VERSION_NAME
     }
     buildTypes {
         release {
@@ -30,6 +33,6 @@ android {
 
 dependencies {
     api project(':snackengage-core')
-    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation Libs.ANNOTATION
 }
 
