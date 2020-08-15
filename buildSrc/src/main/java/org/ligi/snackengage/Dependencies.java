@@ -28,7 +28,7 @@ public class Dependencies {
         public static final String APPCOMPAT = "androidx.appcompat:appcompat:1.2.0";
         public static final String ASSERTJ_ANDROID = "com.squareup.assertj:assertj-android:1.2.0";
         public static final String JUNIT = "junit:junit:4.13";
-        public static final String MATERIAL = "com.google.android.material:material:1.1.0";
+        public static final String MATERIAL = "com.google.android.material:material:1.2.0";
         public static final String MOCKITO = "org.mockito:mockito-core:3.4.0";
 
     }
