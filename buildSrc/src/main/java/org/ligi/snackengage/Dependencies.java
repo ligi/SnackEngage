@@ -7,8 +7,8 @@ public class Dependencies {
         public static final String APPLICATION_ID = "org.ligi.snackengage";
         public static final String BUILD_TOOLS_VERSION = "29.0.3";
         public static final int MIN_SDK_VERSION = 14;
-        public static final int COMPILE_SDK_VERSION = 28;
-        public static final int TARGET_SDK_VERSION = 28;
+        public static final int COMPILE_SDK_VERSION = 29;
+        public static final int TARGET_SDK_VERSION = 29;
         public static final int VERSION_CODE = 24;
         public static final String VERSION_NAME = "0.24";
 
