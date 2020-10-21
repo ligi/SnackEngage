@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import org.junit.After;
 import org.junit.Before;
 import org.ligi.snackengage.snacks.Snack;
 import org.ligi.snackengage.stats.SnackStats;
@@ -33,16 +34,26 @@ public abstract class BaseTest {
     NetworkInfo mockNetwork;
 
     protected Snack someSnack = new OpportunityUsingSnack();
+    private AutoCloseable mocks;
 
     @Before
     public void before() {
-        MockitoAnnotations.initMocks(this);
+        mocks = MockitoAnnotations.openMocks(this);
 
         when(mockAndroidContext.getSystemService(Context.CONNECTIVITY_SERVICE)).thenReturn(mockConnectivityManager);
         when(mockSnackContext.getAndroidContext()).thenReturn(mockAndroidContext);
         when(mockConnectivityManager.getActiveNetworkInfo()).thenReturn(mockNetwork);
 
         when(mockSnackContext.getStats()).thenReturn(mock(SnackStats.class));
+    }
+
+    @After
+    public void after() {
+        try {
+            mocks.close();
+        } catch (Exception ignore) {
+            // Nothing we can do about it.
+        }
     }
 
     protected List<Snack> asSnackList(Snack... inTs) {
