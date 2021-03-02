@@ -33,7 +33,7 @@ public abstract class BaseTest {
     @Mock
     NetworkInfo mockNetwork;
 
-    protected Snack someSnack = new OpportunityUsingSnack();
+    protected final Snack someSnack = new OpportunityUsingSnack();
     private AutoCloseable mocks;
 
     @Before

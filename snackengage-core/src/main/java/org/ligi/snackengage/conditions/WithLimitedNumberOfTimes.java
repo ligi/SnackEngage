@@ -7,7 +7,7 @@ import org.ligi.snackengage.snacks.Snack;
 
 public class WithLimitedNumberOfTimes implements SnackCondition {
 
-    int count;
+    final int count;
 
     public WithLimitedNumberOfTimes(int count) {
         this.count = count;

@@ -27,7 +27,7 @@ public abstract class BaseSnack implements Snack {
     @NonNull
     protected SnackContext snackContext;
     @NonNull
-    protected List<SnackCondition> conditionList = new ArrayList<>();
+    protected final List<SnackCondition> conditionList = new ArrayList<>();
     @SnackDuration
     private int duration = DURATION_INDEFINITE;
 
