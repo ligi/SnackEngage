@@ -13,12 +13,12 @@ import static org.mockito.Mockito.when;
 public class TheConnectedViaWifiSnackConditions extends BaseTest {
 
     @Test
-    public void shouldReturnTrueForWifi() throws Exception {
+    public void shouldReturnTrueForWifi() {
         assertThat(setupSnack(ConnectivityManager.TYPE_WIFI)).isTrue();
     }
 
     @Test
-    public void shouldReturnFalseForMobile() throws Exception {
+    public void shouldReturnFalseForMobile() {
         assertThat(setupSnack(ConnectivityManager.TYPE_MOBILE)).isFalse();
     }
 
