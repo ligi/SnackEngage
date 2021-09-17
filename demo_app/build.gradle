@@ -4,13 +4,13 @@ import static org.ligi.snackengage.Dependencies.Libs
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion Android.COMPILE_SDK_VERSION
+    compileSdk Android.COMPILE_SDK_VERSION
     buildToolsVersion Android.BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId Android.APPLICATION_ID
-        minSdkVersion Android.MIN_SDK_VERSION
-        targetSdkVersion Android.TARGET_SDK_VERSION
+        minSdk Android.MIN_SDK_VERSION
+        targetSdk Android.TARGET_SDK_VERSION
         versionCode Android.VERSION_CODE
         versionName Android.VERSION_NAME
     }
