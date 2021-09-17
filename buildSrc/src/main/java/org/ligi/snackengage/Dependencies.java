@@ -5,7 +5,7 @@ public class Dependencies {
     public static class Android {
 
         public static final String APPLICATION_ID = "org.ligi.snackengage";
-        public static final String BUILD_TOOLS_VERSION = "29.0.3";
+        public static final String BUILD_TOOLS_VERSION = "30.0.3";
         public static final int MIN_SDK_VERSION = 14;
         public static final int COMPILE_SDK_VERSION = 30;
         public static final int TARGET_SDK_VERSION = 30;
