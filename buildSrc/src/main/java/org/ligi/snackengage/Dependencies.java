@@ -29,7 +29,7 @@ public class Dependencies {
         public static final String ASSERTJ_ANDROID = "com.squareup.assertj:assertj-android:1.2.0";
         public static final String JUNIT = "junit:junit:4.13.2";
         public static final String MATERIAL = "com.google.android.material:material:1.3.0";
-        public static final String MOCKITO = "org.mockito:mockito-core:3.8.0";
+        public static final String MOCKITO = "org.mockito:mockito-core:3.12.0";
 
     }
 
