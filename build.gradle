@@ -4,8 +4,9 @@ apply plugin: "com.github.ben-manes.versions"
 
 buildscript {
     repositories {
+        mavenCentral()
         google()
-        jcenter()
+        gradlePluginPortal()
     }
 
     dependencies {
@@ -17,8 +18,8 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         google()
-        jcenter()
     }
 }
 
