@@ -13,7 +13,7 @@ public class TheSnackEngage extends BaseTest {
 
     @Test
     public void shouldNotEngageWhenNoSnacks() {
-        SnackEngage tested = new SnackEngage(new ArrayList<Snack>(), mockSnackContext);
+        SnackEngage tested = new SnackEngage(new ArrayList<>(), mockSnackContext);
         assertThat(tested.engageWhenAppropriate()).isFalse();
     }
 
