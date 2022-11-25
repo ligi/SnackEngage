@@ -9,8 +9,8 @@ public class Dependencies {
         public static final int MIN_SDK_VERSION = 14;
         public static final int COMPILE_SDK_VERSION = 31;
         public static final int TARGET_SDK_VERSION = 31;
-        public static final int VERSION_CODE = 29;
-        public static final String VERSION_NAME = "0.29";
+        public static final int VERSION_CODE = 30;
+        public static final String VERSION_NAME = "0.30";
 
     }
 
