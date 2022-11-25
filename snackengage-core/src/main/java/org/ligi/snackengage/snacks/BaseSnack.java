@@ -68,12 +68,7 @@ public abstract class BaseSnack implements Snack {
             snackBarView.setBackgroundColor(backgroundColor);
         }
 
-        return snackbar.setAction(actionText, new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                engage();
-            }
-        });
+        return snackbar.setAction(actionText, view -> engage());
     }
 
     @NonNull
