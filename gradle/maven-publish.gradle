@@ -1,0 +1,17 @@
+import static org.ligi.snackengage.Dependencies.Android
+import static org.ligi.snackengage.Dependencies.Maven
+
+apply plugin: "maven-publish"
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId Maven.GROUP_ID
+                artifactId project.name
+                version Android.VERSION_NAME
+            }
+        }
+    }
+}
