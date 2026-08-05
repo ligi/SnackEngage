@@ -2,7 +2,7 @@ import static org.ligi.snackengage.Dependencies.Android
 import static org.ligi.snackengage.Dependencies.Libs
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+apply from: '../gradle/maven-publish.gradle'
 
 android {
     compileSdk Android.COMPILE_SDK_VERSION
