@@ -34,6 +34,7 @@ public abstract class BaseSnack implements Snack {
     private String actionText;
     private String titleText;
     private Integer actionColor = null;
+    private Integer titleColor = null;
     private Integer backgroundColor = null;
 
     @Override
@@ -62,6 +63,9 @@ public abstract class BaseSnack implements Snack {
 
         if (actionColor != null) {
             snackbar.setActionTextColor(actionColor);
+        }
+        if (titleColor != null) {
+            snackbar.setTextColor(titleColor);
         }
         if (backgroundColor != null) {
             View snackBarView = snackbar.getView();
@@ -122,6 +126,10 @@ public abstract class BaseSnack implements Snack {
 
     public void setActionColor(@ColorInt int color) {
         actionColor = color;
+    }
+
+    public void setTitleColor(@ColorInt int color) {
+        titleColor = color;
     }
 
     public void setBackgroundColor(@ColorInt int color) {
