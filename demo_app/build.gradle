@@ -4,8 +4,8 @@ import static org.ligi.snackengage.Dependencies.Libs
 apply plugin: 'com.android.application'
 
 android {
+    namespace 'org.ligi.snackengage_demo'
     compileSdk Android.COMPILE_SDK_VERSION
-    buildToolsVersion Android.BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId Android.APPLICATION_ID
@@ -22,7 +22,7 @@ android {
         }
     }
 
-    lintOptions {
+    lint {
         ignore 'OldTargetApi'
         ignore 'GradleDependency'
     }

@@ -3,6 +3,12 @@ import static org.ligi.snackengage.Dependencies.Maven
 
 apply plugin: "maven-publish"
 
+android {
+    publishing {
+        singleVariant("release")
+    }
+}
+
 afterEvaluate {
     publishing {
         publications {

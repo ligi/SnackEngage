@@ -5,7 +5,6 @@ public class Dependencies {
     public static class Android {
 
         public static final String APPLICATION_ID = "org.ligi.snackengage";
-        public static final String BUILD_TOOLS_VERSION = "30.0.3";
         public static final int MIN_SDK_VERSION = 14;
         public static final int COMPILE_SDK_VERSION = 31;
         public static final int TARGET_SDK_VERSION = 31;
@@ -16,7 +15,7 @@ public class Dependencies {
 
     public static class GradlePlugins {
 
-        public static final String ANDROID = "com.android.tools.build:gradle:4.2.2";
+        public static final String ANDROID = "com.android.tools.build:gradle:8.0.2";
         public static final String VERSIONS = "com.github.ben-manes:gradle-versions-plugin:0.42.0";
 
     }
