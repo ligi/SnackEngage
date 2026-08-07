@@ -5,14 +5,12 @@ apply plugin: 'com.android.library'
 apply from: '../gradle/maven-publish.gradle'
 
 android {
+    namespace 'org.ligi.snackengage'
     compileSdk Android.COMPILE_SDK_VERSION
-    buildToolsVersion Android.BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdk Android.MIN_SDK_VERSION
         targetSdk Android.TARGET_SDK_VERSION
-        versionCode Android.VERSION_CODE
-        versionName Android.VERSION_NAME
     }
     buildTypes {
         release {
@@ -21,7 +19,7 @@ android {
         }
     }
 
-    lintOptions {
+    lint {
         baseline file("../.ci/lint-baseline-lib.xml")
         ignore 'OldTargetApi'
         ignore 'NewerVersionAvailable'

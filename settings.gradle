@@ -1,5 +1,5 @@
-if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_1_8)) {
-    throw new GradleException("JDK 8 or compatible version is required. Current JVM: ${JavaVersion.current()}")
+if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
+    throw new GradleException("JDK 17 or compatible version is required. Current JVM: ${JavaVersion.current()}")
 }
 
 include ':demo_app', ':snackengage-core', ':snackengage-playrate', ':snackengage-amazonrate'
