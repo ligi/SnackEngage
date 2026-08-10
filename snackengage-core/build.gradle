@@ -35,7 +35,7 @@ android {
 dependencies {
     implementation Libs.MATERIAL
 
-    testImplementation Libs.ASSERTJ_ANDROID
+    testImplementation Libs.ASSERTJ
     testImplementation Libs.ANNOTATION
     testImplementation Libs.JUNIT
 
