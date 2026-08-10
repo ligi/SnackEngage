@@ -29,7 +29,7 @@ public class Dependencies {
         public static final String ASSERTJ = "org.assertj:assertj-core:3.27.7";
         public static final String JUNIT = "junit:junit:4.13.2";
         public static final String MATERIAL = "com.google.android.material:material:1.6.1"; // compileSdk 32 is required as of 1.7.0
-        public static final String MOCKITO = "org.mockito:mockito-core:4.9.0";
+        public static final String MOCKITO = "org.mockito:mockito-core:5.23.0";
 
     }
 
