@@ -1,0 +1,20 @@
+name: Testing
+
+on:
+  pull_request:
+
+jobs:
+  analyse:
+    name: Analyse
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      - run: ./gradlew test
