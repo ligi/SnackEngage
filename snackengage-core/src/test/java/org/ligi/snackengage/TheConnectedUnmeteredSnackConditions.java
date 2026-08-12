@@ -8,66 +8,47 @@ import android.os.Build;
 import org.junit.Test;
 import org.ligi.snackengage.conditions.connectivity.IsConnectedUnMeteredOrUnknown;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 public class TheConnectedUnmeteredSnackConditions extends BaseTest {
 
     @Test
-    public void whenHasSDK16OrLaterShouldReturnFalseWhenMetered() throws Exception {
-        setFinalStatic(Build.VERSION.class.getField("SDK_INT"), 16);
-
-        assertThat(setupSnack(true, ConnectivityManager.TYPE_WIFI)).isFalse();
+    public void whenHasSDK16OrLaterShouldReturnFalseWhenMetered() {
+        assertThat(setupSnack(16, true, ConnectivityManager.TYPE_WIFI)).isFalse();
     }
 
     @Test
-    public void whenHasSDK16OrLaterShouldReturnTrueWhenNotMetered() throws Exception {
-        setFinalStatic(Build.VERSION.class.getField("SDK_INT"), 16);
-
-        assertThat(setupSnack(false, ConnectivityManager.TYPE_WIFI)).isTrue();
+    public void whenHasSDK16OrLaterShouldReturnTrueWhenNotMetered() {
+        assertThat(setupSnack(16, false, ConnectivityManager.TYPE_WIFI)).isTrue();
     }
 
     @Test
-    public void whenBelowSDK16OrLaterShouldReturnTrueOnWifi() throws Exception {
-        setFinalStatic(Build.VERSION.class.getField("SDK_INT"), 15);
-
-        assertThat(setupSnack(false, ConnectivityManager.TYPE_WIFI)).isTrue();
-        assertThat(setupSnack(true, ConnectivityManager.TYPE_WIFI)).isTrue();
+    public void whenBelowSDK16OrLaterShouldReturnTrueOnWifi() {
+        assertThat(setupSnack(15, false, ConnectivityManager.TYPE_WIFI)).isTrue();
+        assertThat(setupSnack(15, true, ConnectivityManager.TYPE_WIFI)).isTrue();
     }
 
     @Test
-    public void whenBelowSDK16OrLaterShouldReturnFalseForMobile() throws Exception {
-        setFinalStatic(Build.VERSION.class.getField("SDK_INT"), 15);
-
-        assertThat(setupSnack(false, ConnectivityManager.TYPE_MOBILE)).isFalse();
-        assertThat(setupSnack(true, ConnectivityManager.TYPE_MOBILE)).isFalse();
+    public void whenBelowSDK16OrLaterShouldReturnFalseForMobile() {
+        assertThat(setupSnack(15, false, ConnectivityManager.TYPE_MOBILE)).isFalse();
+        assertThat(setupSnack(15, true, ConnectivityManager.TYPE_MOBILE)).isFalse();
     }
 
-    private boolean setupSnack(final boolean isMetered, final int type) {
-        final IsConnectedUnMeteredOrUnknown tested = new IsConnectedUnMeteredOrUnknown();
+    private boolean setupSnack(final int sdkInt, final boolean isMetered, final int type) {
+        final IsConnectedUnMeteredOrUnknown tested = new IsConnectedUnMeteredOrUnknown() {
+            @Override
+            protected boolean canDetectMeteredNetwork() {
+                return sdkInt >= Build.VERSION_CODES.JELLY_BEAN;
+            }
+        };
 
         when(mockAndroidContext.checkCallingOrSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE)).thenReturn(PackageManager.PERMISSION_GRANTED);
         when(mockConnectivityManager.isActiveNetworkMetered()).thenReturn(isMetered);
         when(mockNetwork.getType()).thenReturn(type);
         when(mockNetwork.isConnectedOrConnecting()).thenReturn(true);
 
-        return tested.isAppropriate(mockSnackContext, null);
+        return tested.isAppropriate(mockSnackContext, someSnack);
     }
-
-
-    static void setFinalStatic(Field field, Object newValue) throws Exception {
-        field.setAccessible(true);
-
-        @SuppressWarnings("JavaReflectionMemberAccess")
-        Field modifiersField = Field.class.getDeclaredField("modifiers");
-        modifiersField.setAccessible(true);
-        modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
-
-        field.set(null, newValue);
-    }
-
 
 }
