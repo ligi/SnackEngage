@@ -31,4 +31,5 @@ android {
 dependencies {
     implementation project(':snackengage-playrate')
     implementation Libs.APPCOMPAT
+    implementation Libs.COORDINATOR_LAYOUT
 }
