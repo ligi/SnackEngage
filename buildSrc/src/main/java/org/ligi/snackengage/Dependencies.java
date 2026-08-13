@@ -29,7 +29,7 @@ public class Dependencies {
     public static class Libs {
 
         public static final String ANNOTATION = "androidx.annotation:annotation:1.10.0";
-        public static final String APPCOMPAT = "androidx.appcompat:appcompat:1.5.1"; // compileSdk 33 is required as of 1.6.0
+        public static final String APPCOMPAT = "androidx.appcompat:appcompat:1.6.1"; // compileSdk 34 & minSdk 21 are required as of 1.7.0
         public static final String ASSERTJ = "org.assertj:assertj-core:3.27.7";
         public static final String COORDINATOR_LAYOUT = "androidx.coordinatorlayout:coordinatorlayout:1.2.0"; // compileSdk 34 is required as of 1.3.0
         public static final String JUNIT = "junit:junit:4.13.2";
