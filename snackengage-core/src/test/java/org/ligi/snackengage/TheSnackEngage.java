@@ -1,7 +1,6 @@
 package org.ligi.snackengage;
 
 import org.junit.Test;
-import org.ligi.snackengage.snacks.Snack;
 import org.ligi.snackengage.util.OpportunityIgnoringSnack;
 import org.ligi.snackengage.util.OpportunityUsingSnack;
 
