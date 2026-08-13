@@ -5,7 +5,7 @@ apply plugin: 'com.android.application'
 
 android {
     namespace 'org.ligi.snackengage_demo'
-    compileSdk Android.COMPILE_SDK_VERSION
+    compileSdk = Android.COMPILE_SDK_VERSION
 
     defaultConfig {
         applicationId Android.APPLICATION_ID
@@ -23,8 +23,8 @@ android {
     }
 
     lint {
-        ignore 'OldTargetApi'
-        ignore 'GradleDependency'
+        disable 'OldTargetApi'
+        disable 'GradleDependency'
     }
 }
 
