@@ -1,6 +1,6 @@
 import static org.ligi.snackengage.Dependencies.GradlePlugins
 
-apply plugin: "com.github.ben-manes.versions"
+apply plugin: "io.github.ben-manes.versions"
 
 buildscript {
     repositories {
