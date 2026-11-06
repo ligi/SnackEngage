@@ -4,20 +4,20 @@ import static org.ligi.snackengage.Dependencies.Libs
 apply plugin: 'com.android.application'
 
 android {
-    namespace 'org.ligi.snackengage_demo'
+    namespace = 'org.ligi.snackengage_demo'
     compileSdk = Android.COMPILE_SDK_VERSION
 
     defaultConfig {
-        applicationId Android.APPLICATION_ID
-        minSdk Android.MIN_SDK_VERSION
-        targetSdk Android.TARGET_SDK_VERSION
-        versionCode Android.VERSION_CODE
-        versionName Android.VERSION_NAME
+        applicationId = Android.APPLICATION_ID
+        minSdk = Android.MIN_SDK_VERSION
+        targetSdk = Android.TARGET_SDK_VERSION
+        versionCode = Android.VERSION_CODE
+        versionName = Android.VERSION_NAME
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
