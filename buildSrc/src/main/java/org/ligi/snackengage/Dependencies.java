@@ -15,7 +15,7 @@ public class Dependencies {
 
     public static class GradlePlugins {
 
-        public static final String ANDROID = "com.android.tools.build:gradle:9.5.0";
+        public static final String ANDROID = "com.android.tools.build:gradle:9.5.1";
         public static final String VERSIONS = "io.github.ben-manes:gradle-versions-plugin:0.67.0";
 
     }
