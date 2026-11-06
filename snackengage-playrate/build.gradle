@@ -5,26 +5,26 @@ apply plugin: 'com.android.library'
 apply from: '../gradle/maven-publish.gradle'
 
 android {
-    namespace 'org.ligi.snackengage.rate'
+    namespace = 'org.ligi.snackengage.rate'
     compileSdk = Android.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdk Android.MIN_SDK_VERSION
-        targetSdk Android.TARGET_SDK_VERSION
+        minSdk = Android.MIN_SDK_VERSION
+        targetSdk = Android.TARGET_SDK_VERSION
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
     lint {
-        baseline file("../.ci/lint-baseline-playrate.xml")
+        baseline = file("../.ci/lint-baseline-playrate.xml")
         disable 'NewerVersionAvailable'
         disable 'GradleDependency'
-        checkAllWarnings true
-        warningsAsErrors true
+        checkAllWarnings = true
+        warningsAsErrors = true
     }
 
 }

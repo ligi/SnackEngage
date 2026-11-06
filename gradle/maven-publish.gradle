@@ -14,9 +14,9 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId Maven.GROUP_ID
-                artifactId project.name
-                version Android.VERSION_NAME
+                groupId = Maven.GROUP_ID
+                artifactId = project.name
+                version = Android.VERSION_NAME
             }
         }
     }
