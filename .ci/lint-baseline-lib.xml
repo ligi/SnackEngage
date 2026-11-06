@@ -24,17 +24,6 @@
     </issue>
 
     <issue
-        id="OldTargetApi"
-        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
-        errorLine1="        targetSdkVersion 25"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="build.gradle"
-            line="9"
-            column="9"/>
-    </issue>
-
-    <issue
         id="UnusedResources"
         message="The resource `R.string.rate_snack_msg` appears to be unused"
         errorLine1="    &lt;string name=&quot;rate_snack_msg&quot;>Like?&lt;/string>"
