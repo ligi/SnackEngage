@@ -5,7 +5,9 @@ apply plugin: "maven-publish"
 
 android {
     publishing {
-        singleVariant("release")
+        singleVariant("release") {
+            withSourcesJar()
+        }
     }
 }
 
