@@ -10,7 +10,6 @@ android {
 
     defaultConfig {
         minSdk = Android.MIN_SDK_VERSION
-        targetSdk = Android.TARGET_SDK_VERSION
     }
     buildTypes {
         release {
